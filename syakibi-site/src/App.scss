@@ -1,0 +1,219 @@
+// Variables
+$bg-cozy: #f5f0e1;
+$wood-dark: #8b5e3c;
+$wood-light: #c9a66b;
+$text-dark: #333;
+$text-light: white;
+
+// Global
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: $bg-cozy;
+  color: $text-dark;
+}
+
+// App
+.app > section {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+// Page Animation
+.page-container {
+  position: relative;
+  overflow: hidden;
+
+  > section {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  &.right > section {
+    opacity: 1;
+    transform: translateX(100%);
+    animation: slideInRight 0.5s forwards;
+  }
+
+  &.left > section {
+    opacity: 1;
+    transform: translateX(-100%);
+    animation: slideInLeft 0.5s forwards;
+  }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+// Navbar
+.navbar {
+  background: #3e2723;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      color: #ffb74d;
+    }
+
+    &.active {
+      color: #ffb74d;
+      text-decoration: underline;
+    }
+
+    .divider {
+      margin: 0 0.5rem;
+      color: #ffb74d;
+      font-weight: bold;
+    }
+  }
+
+  .mode-toggle {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  // Desktop menu
+  .menu-desktop {
+    display: flex;
+    justify-content: center; /* center the menu */
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+
+    button {
+      flex: 1; /* buttons fill evenly */
+      max-width: 120px; /* optional: limit width so text doesn't stretch too far */
+    }
+  }
+
+  // Mobile menu
+  .menu-mobile {
+    display: none;
+    position: relative;
+
+    .hamburger {
+      font-size: 1.5rem;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #3e2723;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+// Corrected Dark/Light mode colors
+body.light {
+  background-color: #222;  /* dark background for light mode toggle */
+  color: #eee;
+}
+
+body.dark {
+  background-color: #f5f0e1; /* light background for dark mode toggle */
+  color: #333;
+}
+
+// Media query for mobile
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+  .menu-mobile {
+    display: block;
+  }
+}
+
+// Hero section
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, $wood-dark, $wood-light);
+  color: $text-light;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: darken($wood-dark, 10%);
+    padding: 0.8rem 2rem;
+    color: $text-light;
+    border-radius: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: lighten($wood-dark, 15%);
+    }
+  }
+}
+
+// Socials
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  background-color: darken($wood-light, 10%);
+  color: $text-light;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: $wood-dark;
+    text-decoration: none;
+    color: $text-light;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $wood-light;
+    }
+  }
+}
