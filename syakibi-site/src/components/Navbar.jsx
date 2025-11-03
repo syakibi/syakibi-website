@@ -3,12 +3,6 @@ import { useState, useEffect } from "react";
 function Navbar({ currentPage, setCurrentPage }) {
   const sections = ["Home", "About", "Gallery", "Schedules", "Socials"];
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Optional: Persist dark mode in localStorage
-  useEffect(() => {
-    document.body.className = darkMode ? "dark" : "light";
-  }, [darkMode]);
 
   return (
     <nav className="navbar">
@@ -24,9 +18,6 @@ function Navbar({ currentPage, setCurrentPage }) {
             {index < sections.length - 1 && <span className="divider">/</span>}
           </button>
         ))}
-        <button className="mode-toggle" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️ Light" : "🌙 Dark"}
-        </button>
       </div>
 
       {/* Mobile menu */}
@@ -48,12 +39,6 @@ function Navbar({ currentPage, setCurrentPage }) {
                 {section}
               </button>
             ))}
-            <button
-              className="mode-toggle"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              {darkMode ? "☀️ Light" : "🌙 Dark"}
-            </button>
           </div>
         )}
       </div>

@@ -13,22 +13,34 @@ export default function App() {
   const sections = ["Home", "About", "Gallery", "Schedules", "Socials"];
 
   useEffect(() => {
-    const handleWheel = (e) => {
-      e.preventDefault();
-      const currentIndex = sections.indexOf(currentPage);
+  const handleWheel = (e) => {
+    const section = document.querySelector(".page-container section");
+    if (!section) return;
 
-      if (e.deltaY > 0 && currentIndex < sections.length - 1) {
-        setDirection("right");
-        setCurrentPage(sections[currentIndex + 1]);
-      } else if (e.deltaY < 0 && currentIndex > 0) {
-        setDirection("left");
-        setCurrentPage(sections[currentIndex - 1]);
-      }
-    };
+    const atTop = section.scrollTop <= 0;
+    const atBottom =
+      section.scrollTop + section.clientHeight >= section.scrollHeight;
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, [currentPage]);
+    // If user can scroll inside section, allow normal scroll
+    if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) return;
+
+    // Otherwise, change section
+    e.preventDefault();
+    const currentIndex = sections.indexOf(currentPage);
+
+    if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+      setDirection("right");
+      setCurrentPage(sections[currentIndex + 1]);
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+      setDirection("left");
+      setCurrentPage(sections[currentIndex - 1]);
+    }
+  };
+
+  // attach globally so you can scroll anywhere on screen
+  window.addEventListener("wheel", handleWheel, { passive: false });
+  return () => window.removeEventListener("wheel", handleWheel);
+}, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -44,8 +56,9 @@ export default function App() {
   return (
     <div className="app">
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <div className={`page-container ${direction}`}></div>
-      {renderPage()}
+      <div className={`page-container ${direction}`} key={currentPage}>
+        {renderPage()}
+      </div>
     </div>
   );
 }

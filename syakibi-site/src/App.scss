@@ -14,47 +14,34 @@ body {
 }
 
 // App
-.app > section {
-  transition: transform 0.6s ease, opacity 0.6s ease;
+.page-container .hero,
+.page-container .about,
+.page-container .gallery,
+.page-container .schedules,
+.page-container .socials {
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-// Page Animation
-.page-container {
-  position: relative;
-  overflow: hidden;
-
-  > section {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: translateX(0);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-  }
-
-  &.right > section {
-    opacity: 1;
-    transform: translateX(100%);
-    animation: slideInRight 0.5s forwards;
-  }
-
-  &.left > section {
-    opacity: 1;
-    transform: translateX(-100%);
-    animation: slideInLeft 0.5s forwards;
-  }
+.page-container.right .hero,
+.page-container.right .about,
+.page-container.right .gallery,
+.page-container.right .schedules,
+.page-container.right .socials {
+  opacity: 1;
+  animation: slideInRight 0.5s forwards;
 }
 
-@keyframes slideInRight {
-  0% { transform: translateX(100%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+.page-container.left .hero,
+.page-container.left .about,
+.page-container.left .gallery,
+.page-container.left .schedules,
+.page-container.left .socials {
+  opacity: 1;
+  animation: slideInLeft 0.5s forwards;
 }
 
-@keyframes slideInLeft {
-  0% { transform: translateX(-100%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
 
 // Navbar
 .navbar {
@@ -134,17 +121,6 @@ body {
   }
 }
 
-// Corrected Dark/Light mode colors
-body.light {
-  background-color: #222;  /* dark background for light mode toggle */
-  color: #eee;
-}
-
-body.dark {
-  background-color: #f5f0e1; /* light background for dark mode toggle */
-  color: #333;
-}
-
 // Media query for mobile
 @media (max-width: 768px) {
   .menu-desktop {
@@ -214,6 +190,121 @@ body.dark {
 
     &:hover {
       background-color: $wood-light;
+    }
+  }
+}
+
+// Schedules Section
+.schedules {
+  padding: 4rem 2rem;
+  background-color: #f5f0e1;
+  color: #333;
+  overflow-x: hidden;
+
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8b5e3c;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+  }
+
+  .timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  padding-left: 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #c9a66b;
+    transform: translateX(-50%);
+  }
+
+  .event-card {
+    position: relative;
+    width: 45%;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    transition: all 0.4s ease;
+    
+    &:nth-child(odd) {
+      align-self: flex-start;
+      margin-right: auto;
+      transform: translateX(-10%);
+    }
+    &:nth-child(even) {
+      align-self: flex-end;
+      margin-left: auto;
+      transform: translateX(10%);
+    }
+
+    .event-dot {
+      position: absolute;
+      top: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 18px;
+      background-color: #8b5e3c;
+      border: 3px solid #f5f0e1;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .event-day {
+      font-weight: 700;
+      color: #8b5e3c;
+      margin-right: 0.5rem;
+    }
+
+    .event-time {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .event-title {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .event-description {
+      font-size: 0.95rem;
+    }
+  }
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .timeline {
+      &::before {
+        left: 8px;
+        transform: none;
+      }
+
+      .event-card {
+        width: 100%;
+        padding-left: 2.5rem;
+
+        .event-dot {
+          left: 8px;
+          transform: none;
+        }
+      }
     }
   }
 }

@@ -2,8 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
-    >
+      className="hero">
       <h1 className="text-5xl font-bold mb-4">Hi, I’m Syakibi 👋</h1>
       <p className="text-lg text-gray-300 max-w-xl mb-6">
         I’m a developer passionate about creating clean, interactive, and accessible web experiences.
