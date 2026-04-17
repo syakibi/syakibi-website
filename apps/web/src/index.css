@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 19 50% 96%;
+    --foreground: 22 69% 12%;
+    
+    --card: 19 60% 94%;
+    --card-foreground: 22 69% 12%;
+    
+    --popover: 19 50% 96%;
+    --popover-foreground: 22 69% 12%;
+    
+    --primary: 22 69% 15%;
+    --primary-foreground: 19 100% 90%;
+    
+    --secondary: 22 54% 27%;
+    --secondary-foreground: 19 100% 90%;
+    
+    --muted: 19 40% 92%;
+    --muted-foreground: 22 40% 35%;
+    
+    --accent: 32 75% 43%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 22 40% 85%;
+    --input: 22 40% 85%;
+    --ring: 32 75% 43%;
+    
+    --radius: 0.75rem;
+  }
+  
+  .dark {
+    --background: 22 69% 8%;
+    --foreground: 19 50% 92%;
+    
+    --card: 22 50% 10%;
+    --card-foreground: 19 50% 92%;
+    
+    --popover: 22 69% 10%;
+    --popover-foreground: 19 50% 92%;
+    
+    --primary: 22 69% 20%;
+    --primary-foreground: 19 100% 90%;
+    
+    --secondary: 22 54% 35%;
+    --secondary-foreground: 19 100% 90%;
+    
+    --muted: 22 30% 18%;
+    --muted-foreground: 19 30% 65%;
+    
+    --accent: 32 75% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 22 30% 22%;
+    --input: 22 30% 22%;
+    --ring: 32 75% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: clip;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Outfit", sans-serif;
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
