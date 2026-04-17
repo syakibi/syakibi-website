@@ -4,6 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/syakibi-website/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -14,6 +15,6 @@ export default defineConfig({
     host: '0.0.0.0',
   },
   build: {
-    outDir: '../../dist/apps/web',
+    outDir: 'dist',
   },
 })
