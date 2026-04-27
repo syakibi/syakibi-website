@@ -11,10 +11,29 @@ const ArtShowcasePage = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const artworks = Array.from({ length: 21 }, (_, index) => ({
-    image: `/images/showcase-${index}.png`,
-    title: `Showcase ${index + 1}`
-  }));
+  const artworks = [
+    { image: 'https://i.postimg.cc/bG3kJtgN/showcase-0.png', title: 'Showcase 1' },
+    { image: 'https://i.postimg.cc/ns0BzD2L/showcase-1.png', title: 'Showcase 2' },
+    { image: 'https://i.postimg.cc/WDXg3k8F/showcase-2.png', title: 'Showcase 3' },
+    { image: '/images/showcase-3.png', title: 'Showcase 4' },
+    { image: 'https://i.postimg.cc/62qRGpb0/showcase-4.png', title: 'Showcase 5' },
+    { image: 'https://i.postimg.cc/dk3dTVNr/showcase-5.png', title: 'Showcase 6' },
+    { image: 'https://i.postimg.cc/tZJPV4v3/showcase-6.png', title: 'Showcase 7' },
+    { image: 'https://i.postimg.cc/7Gh7TZtg/showcase-7.png', title: 'Showcase 8' },
+    { image: 'https://i.postimg.cc/dkfCRcg8/showcase-8.png', title: 'Showcase 9' },
+    { image: 'https://i.postimg.cc/TLsbjvBq/showcase-9.png', title: 'Showcase 10' },
+    { image: 'https://i.postimg.cc/gX7hyb1M/showcase-10.png', title: 'Showcase 11' },
+    { image: 'https://i.postimg.cc/LYWPkFG0/showcase-11.png', title: 'Showcase 12' },
+    { image: 'https://i.postimg.cc/tZc6dG88/showcase-12.png', title: 'Showcase 13' },
+    { image: 'https://i.postimg.cc/ftPd7Q16/showcase-13.png', title: 'Showcase 14' },
+    { image: 'https://i.postimg.cc/64GvY1NF/showcase-14.png', title: 'Showcase 15' },
+    { image: 'https://i.postimg.cc/XGP5K6Tj/showcase-15.png', title: 'Showcase 16' },
+    { image: 'https://i.postimg.cc/tnVx2mjR/showcase-16.png', title: 'Showcase 17' },
+    { image: 'https://i.postimg.cc/zHRg0Pr3/showcase-17.png', title: 'Showcase 18' },
+    { image: 'https://i.postimg.cc/jCWPxCJg/showcase-18.png', title: 'Showcase 19' },
+    { image: 'https://i.postimg.cc/hhJTDhdR/showcase-19.png', title: 'Showcase 20' },
+    { image: 'https://i.postimg.cc/xqkMfqzc/showcase-20.png', title: 'Showcase 21' }
+  ];
 
   const filteredArtworks = artworks;
 

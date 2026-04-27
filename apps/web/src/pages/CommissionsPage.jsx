@@ -12,25 +12,25 @@ const CommissionsPage = () => {
       title: 'YCH Emotes',
       description: 'Custom emotes featuring your character in various expressions and poses.',
       price: '$20 for a pack of 10 emotes',
-      image: '/images/ych-emotes.png'
+      image: 'https://i.postimg.cc/14gwm4q5/ych-emotes.png'
     },
     {
       title: 'YCH Head Illustrations',
       description: 'Detailed head illustrations of your character with custom expressions and styling.',
       price: '$40',
-      image: '/images/ych-head.png'
+      image: 'https://i.postimg.cc/kDVKJDb4/ych-head.png'
     },
     {
       title: 'YCH Full Body Illustrations',
       description: 'Complete full-body illustrations showcasing your character in dynamic poses.',
       price: '$80',
-      image: '/images/ych-fullbody.png'
+      image: 'https://i.postimg.cc/MXhRvx7z/ych-fullbody.png'
     },
     {
       title: 'YCH Chibify',
       description: 'Adorable chibi-style illustrations of your character in cute, simplified form.',
       price: '$30',
-      image: '/images/ych-chibify.png'
+      image: 'https://i.postimg.cc/WtDgNtkN/ych-chibify.png'
     }
   ];
 
@@ -89,7 +89,7 @@ const CommissionsPage = () => {
                             alt={item.title}
                             className="w-full h-48 object-cover rounded-t-lg"
                             onError={(e) => {
-                              e.target.src = '/images/placeholder.png'; // Fallback image
+                              e.target.src = 'https://via.placeholder.com/600x400?text=Image+Unavailable';
                             }}
                           />
                         </CardHeader>
