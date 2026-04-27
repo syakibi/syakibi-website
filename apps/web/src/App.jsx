@@ -6,10 +6,9 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage.jsx';
 import StreamerPage from './pages/StreamerPage.jsx';
 import ArtShowcasePage from './pages/ArtShowcasePage.jsx';
-import CommissionsPage from './pages/CommissionsPage.jsx';
 import SocialFeedPage from './pages/SocialFeedPage.jsx';
 
-const routeOrder = ['/', '/streamer', '/art', '/commissions', '/social'];
+const routeOrder = ['/', '/streamer', '/art', '/social'];
 
 const AnimatedPage = ({ children }) => {
   const location = useLocation();
@@ -47,7 +46,6 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/streamer" element={<StreamerPage />} />
             <Route path="/art" element={<ArtShowcasePage />} />
-            <Route path="/commissions" element={<CommissionsPage />} />
             <Route path="/social" element={<SocialFeedPage />} />
             <Route path="*" element={
               <div className="min-h-screen flex items-center justify-center bg-background">

@@ -43,9 +43,6 @@ const Footer = () => {
               <Link to="/art" className="text-sm hover:text-primary transition-colors duration-200">
                 Works
               </Link>
-              <Link to="/commissions" className="text-sm hover:text-primary transition-colors duration-200">
-                Commissions
-              </Link>
               <Link to="/social" className="text-sm hover:text-primary transition-colors duration-200">
                 Social feed
               </Link>

@@ -53,7 +53,7 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Syakibi - Find Me on Twitch</title>
-        <meta name="description" content="Join me for gaming content, and creative commissions." />
+        <meta name="description" content="Join me for gaming content and open slots for face shot illustration. Visit Ko-fi to reserve a slot." />
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
@@ -297,15 +297,15 @@ const HomePage = () => {
                 transition={{ duration: 0.5 }}
                 className="max-w-3xl mx-auto text-center"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-muted-foreground">Ready to collaborate?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-muted-foreground">Open slots available</h2>
                 <p className="text-lg leading-relaxed text-muted-foreground mb-8">
-                  I'm currently accepting commission requests for <span className="text-accent font-semibold">Character Concepts</span> and <span className="text-accent font-semibold">Illustrations</span>. Don't be afraid The Dino Monk won't bite... if you ask nicely.
+                  I have a few slots open for face shot illustrations. If you'd like one, head over to my Ko-fi for details, pricing, and to reserve your spot.
                 </p>
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 active:scale-[0.98] transition-all duration-200">
-                  <Link to="/commissions" className="flex items-center gap-2">
-                    Request a commission
+                  <a href="https://ko-fi.com/syakibi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    Reserve on Ko-fi
                     <Heart className="w-5 h-5" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </div>

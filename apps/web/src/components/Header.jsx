@@ -12,7 +12,6 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/streamer', label: 'Stream' },
     { path: '/art', label: 'Works' },
-    { path: '/commissions', label: 'Commissions' },
     { path: '/social', label: 'Social feed' }
   ];
 
