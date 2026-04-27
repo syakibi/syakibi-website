@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/syakibi-website/',
+  base: '/stream/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

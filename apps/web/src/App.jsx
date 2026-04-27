@@ -68,7 +68,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router basename="/syakibi-website">
+    <Router basename="/stream">
       <AppContent />
     </Router>
   );
