@@ -36,15 +36,9 @@ const HomePage = () => {
   
   const featuredWorks = [
     {
-      image: 'https://i.postimg.cc/qtk24L8Y/digitalart.png',
-      title: 'Digital art series',
-      category: 'Digital art',
-      link: '/art'
-    },
-    {
-      image: 'https://i.postimg.cc/XZV948wT/characterillust.png',
-      title: 'Character design',
-      category: 'Illustration',
+      image: 'https://i.postimg.cc/Dy3ffS3G/art-gallery.gif',
+      title: 'Art Gallery',
+      category: 'Portfolio',
       link: '/art'
     }
   ];
@@ -63,7 +57,7 @@ const HomePage = () => {
           <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
               <img
-                src="https://i.postimg.cc/67Yn3v01/banner.png"
+                src="https://i.postimg.cc/VsgRFCsv/showcase-19.png"
                 alt="Syakibi Twitch Banner"
                 className="w-full h-full object-cover blur-sm"
               />
@@ -142,7 +136,7 @@ const HomePage = () => {
                       style={{ perspective: '1200px', position: 'relative' }}
                     >
                       <motion.img
-                        src="https://i.postimg.cc/zLJT8jC1/about.png"
+                        src="https://i.postimg.cc/fbdC7qkk/about.png"
                         alt="Syakibi"
                         className="w-full h-auto object-cover"
                         animate={{ 
@@ -230,7 +224,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20">
+              <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto mt-20">
                 {featuredWorks.map((work, index) => (
                   <motion.div
                     key={index}

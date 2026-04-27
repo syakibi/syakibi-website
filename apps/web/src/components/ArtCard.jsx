@@ -10,7 +10,7 @@ const ArtCard = ({ image, title, category, onClick }) => {
       onClick={onClick}
       className="group relative overflow-hidden rounded-2xl cursor-pointer bg-card"
     >
-      <div className="aspect-[3/4] overflow-hidden">
+      <div className="aspect-[4/5] overflow-hidden">
         <img
           src={image}
           alt={title}
