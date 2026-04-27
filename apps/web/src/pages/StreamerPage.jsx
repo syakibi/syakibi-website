@@ -10,7 +10,7 @@ import Footer from '@/components/Footer.jsx';
 
 const StreamerPage = () => {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const MODERATOR_PASSWORD = 'admin123';
+  const MODERATOR_PASSWORD = 'syakib5249';
   const STREAM_TIME = '11:00 AM GMT+8';
 
   // Simple state without useLocalStorage for now
@@ -143,6 +143,23 @@ const StreamerPage = () => {
                     </DialogContent>
                   </Dialog>
                 </div>
+
+                {/* Weekly Schedule Image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="mb-8"
+                >
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg bg-card border">
+                    <img
+                      src="https://i.postimg.cc/kGLvzLjL/Weekly-Stream-Schedule.png"
+                      alt="Weekly Stream Schedule"
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Schedule Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
